@@ -256,7 +256,11 @@
      * @return (object)
      */
     $.fn.sSlider = function( options ) {
-        var slider = new Slider(this, options);
-        return this;
+        return this.each(function(){
+            if (!$(this).hasClass('sSlider')) {
+                $(this).addClass('sSlider');
+            }
+            new Slider($(this), options);
+        });
     };    
 }(jQuery));
