@@ -1,9 +1,21 @@
 <html>
     <head>
+        <meta charset="utf-8" />
+	<meta name="keywords" content="autoslider jquery plugin sSlider" />
+	<meta name="description" content="A lightweight jQuery plugin" />
+        <link rel="publisher" href="https://plus.google.com/118127516140480192416" />
+	<meta property="og:title" content="Giuseppe Occhipinti" />
+	<meta property="og:description" content="A lightweight jQuery plugin" />
+	<meta property="og:url" content="http://peppeocchi.github.io/sSlider/" />
+	<meta property="og:site_name" content="sSlider" />
+	<meta property="article:publisher" content="https://www.facebook.com/peppeocchi" />
+	<link type="text/plain" rel="author" href="humans.txt" />
         <title>sSlider</title>
+        
         <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/jquery.sSlider.min.css">
         <link rel="stylesheet" type="text/css" href="style.css">
+        
         <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <script src="jquery.sSlider.min.js"></script>
         <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
@@ -14,11 +26,17 @@
         </script>
     </head>
     <body>
-        <h1>jQuery plugin: <b>sSlider</b></h1>
+        <h1><b>sSlider</b>: a lightweight jQuery plugin</h1>
         <a id='download' href='sSlider.zip'>Download sSlider.zip (26,8kB)</a>
         <div id="slider1" class="sSlider">
-            <div><img src="samples/1.jpg"><span>Caption 1</span></div>
-            <div><img src="samples/2.jpg"><span>Caption 2</span></div>
+            <div><img src="samples/1.jpg"></div>
+            <div><img src="samples/2.jpg"><span>Caption</span></div>
+            <div><img src="samples/3.jpg"><span>Write some text here</span></div>
+            <div><img src="samples/4.jpg"></div>
+            <div><img src="samples/5.jpg"><span>Text</span></div>
+            <div><img src="samples/6.jpg"><span>Beautiful landscape</span></div>
+            <div><img src="samples/8.jpg"><span>Birds</span></div>
+            <div><img src="samples/10.jpg"></div>
         </div>
         <div id="description">
             <h2>Features</h2>
@@ -39,19 +57,15 @@
             <h2>HowTo - Step by step</h2>
             <p>
                 <ol>
-                    <li><h3><a href="sSlider.zip">Download</a> the minified package, extract and place it into your project directory.</h3></li>
-                        <h3>The package contain these files</h3>
-                        <ul>
-                            <li>css/jQuery.sSlide.min.css</li>
-                            <li>img/left.png, img/right.png, img/pause.png, img/play.png, img/load.gif</li>
-                            <li>jQuery.sSlider.js</li>
-                        </ul>
+                    <li><h3><a href="sSlider.zip">Download</a> the minified package, extract and place it into your project directory</h3>
+                        <p>The package contain css styles, images and the minified version of sSlider</p>
+                    </li>
                     <li><h3>Link files :: in the &lt;head&gt; tag of your document</h3>
                         <pre class="prettyprint linenums">&lt;head&gt;
     ...
-    &lt;link rel="stylesheet" href="path/to/sSlider/css/jQuery.sSlider.css" /&gt;
+    &lt;link rel="stylesheet" href="path/to/sSlider/css/jQuery.sSlider.min.css" /&gt;
     &lt;script src="http://code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
-    &lt;script src="path/to/sSlider/jQuery.sSlider.js"&gt;&lt;/script&gt;
+    &lt;script src="path/to/sSlider/jQuery.sSlider.min.js"&gt;&lt;/script&gt;
     ...
 &lt;/head&gt;</pre>
                     </li>
@@ -80,7 +94,7 @@
                                 <thead>
                                     <td>Option name</td>
                                     <td>Default</td>
-                                    <td>Possible value</td>
+                                    <td>Accepted values</td>
                                     <td>Example</td>
                                 </thead>
                                 <tr>
@@ -149,11 +163,9 @@
         </div>
         <div id="footer">
             <div id="copyright">
-                Copyright &copy; 2014, Giuseppe Occhipinti<br>
-                All rights reserved.
+                Copyright &copy; 2014, <a id="portfolio" href="http://giuseppeocchipinti.altervista.org">Giuseppe Occhipinti</a> - <a id="mail" href="mailto:peppeocchi@gmail.com">peppeocchi@gmail.com</a>
             </div>
-            <hr>
-            <div id="MITlicense">
+            <div id="MITlicense" style="display: none">
                 <a href="#">The MIT License (MIT)</a><br><br>
                 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in

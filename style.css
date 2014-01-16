@@ -1,5 +1,5 @@
 html, body {margin: 0; padding: 0; background-color: #f6f6f6; color: #111; min-width: 1024px; font-family: 'Exo 2', sans-serif;}
-h1 {text-align: center; font-size: 3em; margin: 1em 0}
+h1 {font-size: 3em; margin: .5em 0 1em 10%}
 h2 {font-size: 2em;}
 a, b {color: #FF3C1F}
 a:hover {color: #bb2c17;}
@@ -16,10 +16,13 @@ em { text-decoration: underline; font-weight: 800; margin-right: 5px;}
     opacity: .3;
     z-index: 999;
     border-radius: 10px;
-    transition: opacity 400ms ease;
+    -webkit-transition: opacity 400ms ease;
+     -moz-transition: opacity 400ms ease;
+       -o-transition: opacity 400ms ease;
+          transition: opacity 400ms ease;
 }
 #download:hover {opacity: 1;}
-#description { width: 90%; padding: 12px; margin: auto; font-size: 1.3em;}
+#description {width: 90%; padding: 12px; margin: auto; font-size: 1.3em;}
 li {padding: 5px 0;}
 #options {
     width: 100%;
@@ -39,4 +42,7 @@ li {padding: 5px 0;}
     padding: 20px;
 }
 #copyright {text-align: center;}
+#portfolio, #mail {text-decoration: none;}
+#mail {color: #aaa;}
+#mail:hover {text-decoration: underline}
 #MITlicense {text-align: center; font-size: .8em;}

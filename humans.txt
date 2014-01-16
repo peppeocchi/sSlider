@@ -1,0 +1,8 @@
+/* MAIN */
+  Develop & Main Design: Giuseppe Occhipinti
+  Twitter: @peppeocchi
+
+/* SITE */
+  Last update: 16/01/2014
+  Doctype: HTML5
+  IDE: Komodo Edit
