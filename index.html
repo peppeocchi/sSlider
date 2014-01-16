@@ -1,0 +1,177 @@
+<html>
+    <head>
+        <title>sSlider</title>
+        <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="min/css/jquery.sSlider.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="min/jquery.sSlider.min.js"></script>
+        <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=sons-of-obsidian"></script>
+        <script>
+            $(document).ready(function(){
+                $('#slider1').sSlider({'animationType': 'random'});
+            });
+        </script>
+    </head>
+    <body>
+        <h1>jQuery plugin: <b>sSlider</b></h1>
+        <a id='download' href=''>Download sSlider.zip (25,7kB)</a>
+        <div id="slider1" class="sSlider">
+            <div><img src="samples/1.jpg"><span>Caption 1</span></div>
+            <div><img src="samples/2.jpg"><span>Caption 2</span></div>
+        </div>
+        <div id="description">
+            <h2>Features</h2>
+            <p>
+                <p><b>sSlider</b> is a lightweight jQuery slider toolkit. View source code on <a href="">github</a>.</p>
+                <p>
+                    <ul>
+                        <li><em>Autoslide</em> your images with fade/slide effects</li>
+                        <li><em>Progress bar</em> on the top</li>
+                        <li><em>Left/right navigation</em></li>
+                        <li><em>Pause/play controls</em> by clicking on the image</li>
+                        <li><em>Horizonta/vertical slide, fade, no or random animation</em></li>
+                        <li><em>Caption</em> on each slide</li>
+                        <li><em>Multiple slider</em> in the same page</li>
+                    </ul>
+                </p>
+            </p>
+            <h2>HowTo - Step by step</h2>
+            <p>
+                <ol>
+                    <li><h3><a href="#">Download</a> the minified package, extract and place it into your project directory.</h3></li>
+                        <h3>The package contain these files</h3>
+                        <ul>
+                            <li>css/jQuery.sSlide.min.css</li>
+                            <li>img/left.png, img/right.png, img/pause.png, img/play.png, img/load.gif</li>
+                            <li>jQuery.sSlider.js</li>
+                        </ul>
+                    <li><h3>Link files :: in the &lt;head&gt; tag of your document</h3>
+                        <pre class="prettyprint linenums">&lt;head&gt;
+    ...
+    &lt;link rel="stylesheet" href="path/to/sSlider/css/jQuery.sSlider.css" /&gt;
+    &lt;script src="http://code.jquery.com/jquery-1.10.2.min.js"&gt;&lt;/script&gt;
+    &lt;script src="path/to/sSlider/jQuery.sSlider.js"&gt;&lt;/script&gt;
+    ...
+&lt;/head&gt;</pre>
+                    </li>
+                    <li><h3>Markup HTML :: in the &lt;body&gt; tag of your document</h3>
+                        <pre class="prettyprint linenums">&lt;body&gt;
+    ...
+    &lt;div id="mySlider" class="sSlider"&gt;
+        &lt;div&gt;&lt;img src="path/to/image/new-york.jpg" /&gt;&lt;span&gt;New York&lt;/span&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;img src="path/to/image/paris.jpg" /&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;img src="path/to/image/cars.jpg" /&gt;&lt;span&gt;My new car&lt;/span&gt;&lt;/div&gt;
+        &lt;div&gt;&lt;img src="path/to/image/landscape.jpg" /&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    ...
+&lt;/body&gt;</pre>
+                    </li>
+                    <li><h3>Usage</h3>
+                        <p><h4>Simple usage :: inside a &lt;script&gt; tag</h4>
+                            <pre class="prettyprint linenums">&lt;script&gt;
+    $(document).ready(function(){
+        $('#mySlider').sSlider();
+    });
+&lt;/script&gt;</pre>
+                        </p><hr>
+                        <p><h4>More options</h4>
+                            <table id="options">
+                                <thead>
+                                    <td>Option name</td>
+                                    <td>Default</td>
+                                    <td>Possible value</td>
+                                    <td>Example</td>
+                                </thead>
+                                <tr>
+                                    <td>'animationType'</td>
+                                    <td>'fade'</td>
+                                    <td>'fade'<br>'no-effect'<br>'slideH'<br>'slideV'<br>'random'</td>
+                                    <td><pre class="prettyprint">$('#selector').sSlide({ 'animationType': 'slide' })</pre></td>
+                                </tr>
+                                <tr>
+                                    <td>'autoslide'</td>
+                                    <td>true</td>
+                                    <td>true<br>false</td>
+                                    <td><pre class="prettyprint">$('#selector').sSlide({ 'autoslide': false })</pre></td>
+                                </tr>
+                                <tr>
+                                    <td>'fixedSize'</td>
+                                    <td>false</td>
+                                    <td>false<br>{ 'width': 'XXXpx/%', 'height': 'YYYpx/%' }</td>
+                                    <td><pre class="prettyprint">$('#selector').sSlide({ 'fixedSize': { 'width': '500px', 'height': '40%' } })</pre></td>
+                                </tr>
+                                <tr>
+                                    <td>'nav'</td>
+                                    <td>true</td>
+                                    <td>true<br>false</td>
+                                    <td><pre class="prettyprint">$('#selector').sSlide({ 'nav': false })</pre></td>
+                                </tr>
+                                <tr>
+                                    <td>'progressBar'</td>
+                                    <td>true</td>
+                                    <td>true<br>false</td>
+                                    <td><pre class="prettyprint">$('#selector').sSlide({ 'progressBar': false })</pre></td>
+                                </tr>
+                                <tr>
+                                    <td>'responsive'</td>
+                                    <td>true</td>
+                                    <td>true<br>false</td>
+                                    <td><pre class="prettyprint">$('#selector').sSlide({ 'responsive': false })</pre></td>
+                                </tr>
+                                <tr>
+                                    <td>'speed'</td>
+                                    <td>7000</td>
+                                    <td>int</td>
+                                    <td><pre class="prettyprint">$('#selector').sSlide({ 'speed': 12000 })</pre></td>
+                                </tr>
+                            </table>
+                        </p><hr>
+                        <p><h4>Example: slider 1000x400 without nav, speed 4sec and vertical slide animation</h4>
+                            <pre class="prettyprint linenums">&lt;script&gt;
+    $(document).ready(function(){
+        $('#selector').sSlide({
+            'animationType': 'slideV',
+            'fixedSize': {
+                'width': '1000px',
+                'height': '400px'
+            },
+            'nav': false,
+            'speed': 4000
+        });
+    ...
+    });
+&lt;/script&gt;</pre>
+                        </p>
+                    </li>
+                </ol>
+            </p>
+        </div>
+        <div id="footer">
+            <div id="copyright">
+                Copyright &copy; 2014, Giuseppe Occhipinti<br>
+                All rights reserved.
+            </div>
+            <hr>
+            <div id="MITlicense">
+                <a href="#">The MIT License (MIT)</a><br><br>
+                Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+the Software, and to permit persons to whom the Software is furnished to do so,
+subject to the following conditions:<br><br>
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.<br><br>
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+            </div>
+        </div>
+    </body>
+</html>

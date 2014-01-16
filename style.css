@@ -1,0 +1,42 @@
+html, body {margin: 0; padding: 0; background-color: #f6f6f6; color: #111; min-width: 1024px; font-family: 'Exo 2', sans-serif;}
+h1 {text-align: center; font-size: 3em; margin: 1em 0}
+h2 {font-size: 2em;}
+a, b {color: #FF3C1F}
+a:hover {color: #bb2c17;}
+em { text-decoration: underline; font-weight: 800; margin-right: 5px;}
+#download {
+    text-decoration: none;
+    font-size: 1.5em;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+    background-color: #FF3C1F;
+    padding: 10px;
+    color: #f6f6f6;
+    opacity: .3;
+    z-index: 999;
+    border-radius: 10px;
+    transition: opacity 400ms ease;
+}
+#download:hover {opacity: 1;}
+#description { width: 90%; padding: 12px; margin: auto; font-size: 1.3em;}
+li {padding: 5px 0;}
+#options {
+    width: 100%;
+    background-color: #000;
+    color: #f6f6f6;
+    border-collapse: collapse;
+}
+#options td {border: 1px solid #555;padding: 8px;}
+#options thead td {
+    font-size: 1.4em;
+    border-bottom: 2px solid #bbb;
+    color: #FF3C1F
+}
+#footer {
+    background-color: #222;
+    color: #f6f6f6;
+    padding: 20px;
+}
+#copyright {text-align: center;}
+#MITlicense {text-align: center; font-size: .8em;}
