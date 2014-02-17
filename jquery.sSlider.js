@@ -100,11 +100,11 @@
         $('<span class="leftSlide"></span><span class="rightSlide"></span>').appendTo(_this.elem);
         this.elem.find('.rightSlide').click(function(){
             _this.clear();
-            _this.showNext(1);
+            _this.showNext(1, 1);//direction, manual
         });
         this.elem.find('.leftSlide').click(function(){
             _this.clear();
-            _this.showNext(-1);
+            _this.showNext(-1, 1);
         });
     };
     
@@ -124,7 +124,7 @@
     };
     
     // show next slide :: PN = direction
-    Slider.prototype.showNext = function(PN) {
+    Slider.prototype.showNext = function(PN, manual) {
         var _this = this,
             active = _this.elem.find('div.activeSlide');
         active.removeClass('paused');
@@ -134,7 +134,16 @@
             var toShow = active.prev('div').length ? active.prev() : active.siblings('div').last();
         }
         _this.applyEffect(active, toShow, PN);
-        if(_this.settings.autoslide) _this.startAutoslide();
+        if(manual){
+            _this.elem.children('div.sSliderImage').each(function(){
+                $(this).addClass('paused');
+            });
+        } else {
+            _this.elem.children('div.sSliderImage').each(function(){
+                $(this).removeClass('paused');
+            });
+            if(_this.settings.autoslide) _this.startAutoslide();
+        }
     };
     
     // set timeout for autosliding and animate progressbar
@@ -150,7 +159,7 @@
             });
         }
         _this.timerSlide = setTimeout(function(){
-            _this.showNext(1);
+            _this.showNext(1, 0);//direction, manual
         }, _this.settings.speed);
     };
     
@@ -260,6 +269,11 @@
             if (!$(this).hasClass('sSlider')) {
                 $(this).addClass('sSlider');
             }
+            $(this).children('div').each(function(){
+                if (!$(this).hasClass('sSliderImage')) {
+                    $(this).addClass('sSliderImage');
+                }
+            });
             new Slider($(this), options);
         });
     };    
